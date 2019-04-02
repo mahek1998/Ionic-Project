@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Edit Data
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+        <ion-content padding>
+            <form [formGroup]="update" >
+                <ion-item>
+                    <ion-label floating>
+                        <ion-icon name="person"></ion-icon>
+                      User Name
+                    </ion-label>
+                    <ion-input type="name" formControlName="username"></ion-input>
+                  </ion-item>
+                  <div class="text-danger" *ngIf="update.controls['username'].hasError('required') && update.controls['username'].touched" style="color:red;font-size:14px;text-align:left;"><i> Enter Name</i> </div>
+                  <div class="text-danger" *ngIf="update.controls['username'].hasError('minlength')" style="color:red;font-size:14px;text-align:left;"> <i>Enter more than 4 character</i> </div>
+          <div class="text-danger" *ngIf="update.controls['username'].hasError('pattern')" style="color:red;font-size:14px;text-align:left;"> <i>Only character without Space</i> </div>
+                  
+                  
+              <ion-item>
+                <ion-label floating>
+                  <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+                  Email
+                </ion-label>
+                <ion-input type="email" formControlName="email" value="{{foundData.email}}" readonly></ion-input>
+              </ion-item>
+             
+              <ion-item>
+                  <ion-label floating>Date
+                      <ion-icon name="calendar"></ion-icon>
+                  </ion-label>
+                  <ion-datetime display-format="MMMM YYYY" formControlName="dob" min="1980" max="2010-12-31"></ion-datetime>
+                </ion-item>
+
+
+              <ion-item>
+                <ion-label floating>
+                    <ion-icon name="phone-portrait"></ion-icon>
+                  Number
+                </ion-label>
+                <ion-input type="number" formControlName="number" value="{{foundData.number}}"></ion-input>
+              </ion-item>
+              <div class="text-danger" *ngIf="update.controls['number'].hasError('pattern')" style="color:red;font-size:14px;text-align:left;">Enter number start from(7-9)</div>
+                    <div class="text-danger" *ngIf="update.controls['number'].hasError('maxlength')" style="color:red;font-size:14px;text-align:left;">Only 10 digit </div>
+                    <div class="social-btn">
+                        <button type="submit"  [disabled]="!update.valid" (click)="onUpdate()" class="btn-global facebook" ion-button block>Update</button>
+                    </div>
+          </form>
+</ion-content>

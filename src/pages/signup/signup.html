@@ -1,0 +1,55 @@
+
+<ion-content  class="gradient">
+
+    <div class="logo">
+      <img src="assets/imgs/logo.png">
+    </div>
+    <div class="receptionBanner">
+      <img src="assets/imgs/reception.png">
+    </div>
+    
+    <div class="modal">
+        <form [formGroup]="userForm" >
+      <ion-list>
+    
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text" formControlName='UserName' maxlength="25" required></ion-input>
+          
+        </ion-item>
+        <div *ngIf="userForm.get('UserName').errors && (userForm.get('UserName').touched || userForm.get('UserName').dirty)">
+            <div *ngIf="userForm.controls['UserName'].hasError('required')"><span style="color:red">Username must be filled!</span></div> 
+            <div *ngIf="userForm.controls['UserName'].hasError('pattern')"><span style="color:red">Username must be characters!</span></div>
+          </div>
+        
+          <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="text" maxlength="64" formControlName='Email' required></ion-input>
+        </ion-item>
+        <div *ngIf="userForm.get('Email').errors && (userForm.get('Email').touched || userForm.get('Email').dirty)">
+            <div *ngIf="userForm.controls['Email'].hasError('required')"><span style="color:red">Email must be filled!</span></div>
+            <div *ngIf="userForm.controls['Email'].hasError('pattern')"><span style="color:red">Invalid email ID!</span></div>
+          </div>
+    
+        
+        
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" formControlName='Password' required></ion-input>
+        </ion-item>
+        <div *ngIf="userForm.get('Password').errors && (userForm.get('Password').touched || userForm.get('Password').dirty)">
+            <div *ngIf="userForm.controls['Password'].hasError('required')"><span style="color:red">Please enter your password</span></div>
+            <div *ngIf="userForm.controls['Password'].hasError('minlength')"><span style="color:red">Minimum 6 Characters</span></div>
+            <div *ngIf="userForm.controls['Password'].hasError('maxlength')"><span style="color:red">Maximum 16 Characters</span></div>
+          </div>
+
+
+      </ion-list>
+      <div class="social-btn">
+          <button  [disabled]="!userForm.valid" (click)='getValue()' class="btn-global facebook" ion-button block>Create Account</button>
+          <p (click)='backLogin()' style="color:blue">Already Registered,Login Here.</p>
+      </div>
+      </form>        
+    </div>
+    </ion-content>
+    

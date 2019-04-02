@@ -1,0 +1,24 @@
+page-login {
+    .gradient{
+    
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#01517a+0,20919b+50,20919b+51,35bcb1+100 */
+    background: #01517a; /* Old browsers */
+    background: -moz-linear-gradient(top, #01517a 0%, #20919b 50%, #20919b 51%, #35bcb1 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #01517a 0%,#20919b 50%,#20919b 51%,#35bcb1 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #01517a 0%,#20919b 50%,#20919b 51%,#35bcb1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01517a', endColorstr='#35bcb1',GradientType=0 ); /* IE6-9 */
+     }
+    .logo {text-align: center; margin-top: 17vh; }
+    .logo img {width: 250px;}
+    .receptionBanner {margin-top: 10vh; text-align: center; }
+    .textlogin{background: white;   margin: 0 auto; margin-top: 3vh; padding: 0px 16px; }
+    .social-btn {padding: 30px; }
+    .btn-global {height: 45px; line-height: 45px; font-weight: bold; background: #004c78; font-weight: 500; font-size: 1.8rem; -webkit-box-shadow: none; box-shadow: none; font-family: inherit!important; }
+    .social-btn p{color: #fff } 
+    .signup{text-align: center; margin-top: 25px;}
+    .button.activated{background: #004c78; opacity: 1;}
+    .button:hover:not(.disable-hover) {
+        background-color: #004c78;
+    }
+    }
+    

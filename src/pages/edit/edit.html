@@ -1,0 +1,91 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Edit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    
+        
+        <form [formGroup]="userForm2" novalidate autocomplete="off" >
+
+<div class="camera">
+                <button (click)=takePhoto()>
+                        <img src="assets/imgs/camera_icon.png">
+        
+                </button>
+
+                
+          </div> 
+
+
+
+        
+
+          <div  class="form-group" >
+
+              <ion-item>
+                  <ion-label floating>Username</ion-label>
+                  <ion-input type="text"  placeholder="Username" formControlName='UserName' maxlength="25" ></ion-input>  
+              </ion-item>
+              <div *ngIf="userForm2.get('UserName').errors && (userForm2.get('UserName').touched || userForm2.get('UserName').dirty)">
+                  <div *ngIf="userForm2.controls['UserName'].hasError('required')"><span style="color:red">Username must be filled!</span></div> 
+                  <div *ngIf="userForm2.controls['UserName'].hasError('pattern')"><span style="color:red">Username must be characters!</span></div>
+                </div>
+             
+                <!-- <input type="text" placeholder="Enter UserName" class="form-control form-control2" formControlName='UserName'> -->
+          </div>
+          
+          
+          <div class="form-group">
+              <ion-item>
+                  <ion-label floating>Email</ion-label>
+                  <ion-input type="text"  placeholder="Enter Email" formControlName='Email' maxlength="64" ></ion-input>  
+              </ion-item>
+              <div *ngIf="userForm2.get('Email').errors && (userForm2.get('Email').touched || userForm2.get('Email').dirty)">
+                  <div *ngIf="userForm2.controls['Email'].hasError('required')"><span style="color:red">Email must be filled!</span></div>
+                  <div *ngIf="userForm2.controls['Email'].hasError('pattern')"><span style="color:red">Invalid email ID!</span></div>
+                </div>
+            <!-- <input type="text" placeholder="Enter Email" class="form-control form-control2" formControlName='Email'> -->
+          </div>
+           
+          
+          <div class="form-group ">
+              <ion-item>
+                  <!-- <ion-label floating>Email</ion-label> -->
+                  <ion-input type="date"  placeholder="Date of Birth" formControlName='DOB' minlength='01-01-2017' maxlength='01-01-2018' ></ion-input>  
+              </ion-item>
+            <!-- <input type="date" placeholder="Date of Birth" class="form-control form-control2" formControlName='DOB'> -->
+          </div> 
+           
+          
+          <div class="form-group ">
+              <ion-item>
+                  <!-- <ion-label floating>Email</ion-label> -->
+                  <ion-input type="text"  placeholder="Contact Number" formControlName='Contact' maxlength="10" ></ion-input>  
+              </ion-item>
+            <!-- <input type="text" placeholder="Contact Number" class="form-control form-control2" formControlName='Contact' maxlength="10"> -->
+          </div> 
+          <div *ngIf="userForm2.get('Contact').errors && (userForm2.get('Contact').touched || userForm2.get('Contact').dirty)">
+            <div *ngIf="userForm2.controls['Contact'].hasError('required')"><span style="color:red">Contact no must be filled!</span></div>
+            <div *ngIf="userForm2.controls['Contact'].hasError('pattern')"><span style="color:red">Invalid contactno and should be of 10 digits</span></div>
+          </div>
+          
+          <div class="text-center mt20">
+            <!-- <button type="button" class="btn btn-large radius0 max-WT-250 font-100 btn-green" (click)='editForm()'>Edit Profile</button>
+            <button style="width: 210px;" type="button" class="btn btn-large radius0 max-WT-250 font-100 btn-green" [disabled]="!userForm2.valid" (click)='updateForm()'>Update Profile</button> -->
+           
+            <button ion-button color="primary" (click)='updateForm()'>Update</button>
+          </div>
+             
+            
+         
+
+        </form>
+
+
+</ion-content>

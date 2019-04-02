@@ -1,0 +1,53 @@
+<ion-content  class="gradient">
+
+  <div class="logo">
+    <img src="assets/imgs/logo.png">
+  </div>
+  <div class="receptionBanner">
+    <img src="assets/imgs/reception.png">
+  </div>
+  
+  <div class="modal">
+      <form [formGroup]="Signupform" >
+    <ion-list>
+  
+      <ion-item>
+        <ion-label floating>User Name</ion-label>
+        <ion-input type="text" formControlName="username"></ion-input>
+      </ion-item>
+      <div class="text-danger" *ngIf="Signupform.controls['username'].hasError('required') && Signupform.controls['username'].touched" ><span style="color:red;font-size:13px;text-align:left;">Please enter user name*</span> </div>
+      <div class="text-danger" *ngIf="Signupform.controls['username'].hasError('pattern')" > <span style="color:red;font-size:13px;text-align:left;">Only character without space</span> </div>
+      <div class="text-danger" *ngIf="Signupform.controls['username'].hasError('minlength')" > <span style="color:red;font-size:13px;text-align:left;">Enter al least 4 character</span> </div>
+      <div class="text-danger" *ngIf="Signupform.controls['username'].hasError('maxlength')" > <span style="color:red;font-size:13px;text-align:left;">Enter only 40 character</span> </div> 
+  
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <div class="text-danger" *ngIf="Signupform.controls['email'].hasError('required') && Signupform.controls['email'].touched" > <span style="color:red;font-size:13px;text-align:left;">Please enter email*</span> </div>
+      <div class="text-danger" *ngIf="Signupform.controls['email'].hasError('maxlength')" > <span style="color:red;font-size:13px;text-align:left;">Enter only 65 character</span> </div>       
+<div class="text-danger" *ngIf="Signupform.controls['email'].hasError('pattern')" ><span style="color:red;font-size:13px;text-align:left;"> Please enter correct email</span></div>
+       <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <div class="text-danger" *ngIf="Signupform.controls['password'].hasError('required') && Signupform.controls['password'].touched" > <span style="color:red;font-size:13px;text-align:left;">Please enter password*</span></div>
+       
+      <div class="text-danger" *ngIf="Signupform.controls['password'].hasError('pattern')" ><span style="color:red;font-size:13px;text-align:left;">Please include
+                            uppercase,lowercase,number,spacial character (8 char. min.) </span></div>  
+     
+    </ion-list>
+    <div class="social-btn">
+        <button type="submit" [disabled]="!Signupform.valid" (click)="onSignIn()" class="btn-global facebook" ion-button block>Create Account</button>
+     
+        <button class="btn-global facebook" (click)="register()" ion-button block>Login</button>   
+    </div> 
+  </form> 
+  <div class="social-btn">
+     
+  </div></div>
+  
+  
+  
+  </ion-content>
+  

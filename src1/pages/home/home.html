@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form>
+    <ion-item>
+        <ion-label floating>
+            <ion-icon name="person"></ion-icon>
+          User Name
+        </ion-label>
+        <ion-input type="name"  value="{{foundData.username}}" disabled></ion-input>
+      </ion-item>
+     
+      
+  <ion-item>
+    <ion-label floating>
+      <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+      Email
+    </ion-label>
+    <ion-input type="email"  value="{{foundData.email}}" disabled></ion-input>
+  </ion-item>
+ 
+  <ion-item>
+      <ion-label floating>Date
+          <ion-icon name="calendar"></ion-icon>
+      </ion-label>
+      <ion-input type="text"  value="{{foundData.dob}}" disabled></ion-input>
+    </ion-item>
+
+
+  <ion-item>
+    <ion-label floating>
+        <ion-icon name="phone-portrait"></ion-icon>
+      Number
+    </ion-label>
+    <ion-input type="number"  value="{{foundData.number}}" disabled></ion-input>
+  </ion-item>
+
+   
+    </form>
+</ion-content>

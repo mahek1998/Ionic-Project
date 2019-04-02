@@ -5,13 +5,56 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+ 
+        
+                          <form class="product-detail-form rightslign" [formGroup]="userForm2">
+                            <div class="form-group " >
+
+                                <ion-item>
+                                    <ion-label floating>Username</ion-label>
+                                    <ion-input type="text"  placeholder="Username" formControlName='UserName' maxlength="25" ></ion-input>  
+                                </ion-item>
+                               
+                                  <!-- <input type="text" placeholder="Enter UserName" class="form-control form-control2" formControlName='UserName'> -->
+                            </div>
+                            
+                            
+                            <div class="form-group">
+                                <ion-item>
+                                    <ion-label floating>Email</ion-label>
+                                    <ion-input type="text"  placeholder="Enter Email" formControlName='Email' maxlength="64" ></ion-input>  
+                                </ion-item>
+                              <!-- <input type="text" placeholder="Enter Email" class="form-control form-control2" formControlName='Email'> -->
+                            </div>
+                             
+                            
+                            <div class="form-group ">
+                                <ion-item>
+                                    <!-- <ion-label floating>Email</ion-label> -->
+                                    <ion-input type="date"  placeholder="Date of Birth" formControlName='DOB' minlength='01-01-2017' maxlength='01-01-2018' ></ion-input>  
+                                </ion-item>
+                              <!-- <input type="date" placeholder="Date of Birth" class="form-control form-control2" formControlName='DOB'> -->
+                            </div> 
+                             
+                            
+                            <div class="form-group ">
+                                <ion-item>
+                                    <!-- <ion-label floating>Email</ion-label> -->
+                                    <ion-input type="text"  placeholder="Contact Number" formControlName='Contact' maxlength="10" ></ion-input>  
+                                </ion-item>
+                              <!-- <input type="text" placeholder="Contact Number" class="form-control form-control2" formControlName='Contact' maxlength="10"> -->
+                            </div> 
+                            <div *ngIf="userForm2.get('Contact').errors && (userForm2.get('Contact').touched || userForm2.get('Contact').dirty)">
+                              <div *ngIf="userForm2.controls['Contact'].hasError('required')"><span style="color:red">Contact no must be filled!</span></div>
+                              <div *ngIf="userForm2.controls['Contact'].hasError('pattern')"><span style="color:red">Invalid contactno and should be of 10 digits</span></div>
+                            </div>
+                            
+                            <div class="text-center mt20">
+                              <!-- <button type="button" class="btn btn-large radius0 max-WT-250 font-100 btn-green" (click)='editForm()'>Edit Profile</button>
+                              <button style="width: 210px;" type="button" class="btn btn-large radius0 max-WT-250 font-100 btn-green" [disabled]="!userForm2.valid" (click)='updateForm()'>Update Profile</button> -->
+                              
+                            </div>
+                        
+                          </form>
+                    
 </ion-content>
